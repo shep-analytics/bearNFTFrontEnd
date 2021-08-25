@@ -1,0 +1,47 @@
+.wrap {
+  padding: 5rem 2rem;
+}
+.gridWrap {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.grid {
+  width: 48%;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 3px solid lightgrey;
+  border-radius: 20px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+.img img {
+  width: 100%;
+}
+.mintTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.grid button {
+  background-color: red;
+  border-radius: 20px;
+  width: 100%;
+  color: white;
+  outline: none !important;
+  border: 0px;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+  .grid {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
