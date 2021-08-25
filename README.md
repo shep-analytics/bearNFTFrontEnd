@@ -1,7 +1,7 @@
 # bearNFTFrontEnd
 
 
-## instructions for setting up dev enviorment
+## instructions for setting up ganache dev enviorment
 
 1. Compile contract using truffle compile
 2. Goto build folder and open Bear.json
