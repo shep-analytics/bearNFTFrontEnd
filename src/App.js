@@ -9,7 +9,7 @@ import Web3 from 'web3';
 import {bearTokenABI} from "./contracts/ABIs";
 import {bearTokenAddress} from "./contracts/contractAddress"; 
 
-import Minitng from './Minting/index';
+import Minting from './Minting/index';
 
 function App() {
   
@@ -74,7 +74,7 @@ function App() {
         <Button className="btn btn-primary" onClick={loadWeb3} style={{marginTop:"2em"}} onClick = {BuyToken}>BUY NFT</Button>
 
       </header>
-      {/* <Minitng></Minitng> */}
+      {/* <Minting></Minting> */}
     </div>
   );
 }
