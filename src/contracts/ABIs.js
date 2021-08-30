@@ -558,9 +558,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "string",
+        "internalType": "bytes32[]",
         "name": "tokenURI",
-        "type": "string"
+        "type": "bytes32[]"
       }
     ],
     "name": "claim_2",
@@ -578,9 +578,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "string",
+        "internalType": "bytes32[]",
         "name": "tokenURI",
-        "type": "string"
+        "type": "bytes32[]"
       }
     ],
     "name": "claim_5",
@@ -598,9 +598,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "string",
+        "internalType": "bytes32[]",
         "name": "tokenURI",
-        "type": "string"
+        "type": "bytes32[]"
       }
     ],
     "name": "claim_10",
@@ -618,9 +618,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "string",
+        "internalType": "bytes32[]",
         "name": "tokenURI",
-        "type": "string"
+        "type": "bytes32[]"
       }
     ],
     "name": "claim_20",
@@ -638,9 +638,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "string",
+        "internalType": "bytes32[]",
         "name": "tokenURI",
-        "type": "string"
+        "type": "bytes32[]"
       }
     ],
     "name": "claim_10_GiveAway",

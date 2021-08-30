@@ -10,12 +10,15 @@ import Web3 from 'web3';
 import {bearTokenABI} from "../contracts/ABIs";
 import {bearTokenAddress} from "../contracts/contractAddress"; 
 
+import bear_1 from '../imgs/1.jpg';
+import bear_2 from '../imgs/2.jpg';
+import bear_5 from '../imgs/5.jpg';
 
 
-  
- 
 
-const SalesPage = () => {
+import { ethers } from 'ethers';
+
+const PreSale = () => {
 
     const [ bearContract , setBearContract] = useState(null);
     const [ account, setAccount] = useState(null);
@@ -58,6 +61,15 @@ const SalesPage = () => {
         loadWeb3();
     },[])
 
+
+    function web3StringToBytes32(text) {
+      var result = ethers.utils.hexlify(ethers.utils.toUtf8Bytes(text));
+      while (result.length < 66) { result += '0'; }
+      if (result.length !== 66) { throw new Error("invalid web3 implicit bytes32"); }
+      return result;
+  }
+
+
     
     const BuyToken = async (numberOfTokens)=>{
       console.log(account)
@@ -73,7 +85,7 @@ const SalesPage = () => {
         tokenId = JSON.parse(JSON.stringify(tokenTransaction))["events"]["Transfer"]["returnValues"];
       }
       if(numberOfTokens === 2){
-        tokenTransaction = await bearContract.methods.claim_2('www.google.com/test').send({from:account, gas: 3000000, value: web3.utils.toWei('0.138', 'ether')})
+        tokenTransaction = await bearContract.methods.claim_2("QmX8gVWKGVdHWM1ntNu5UWuoYiCTh2n1c74Ee9t1Am4kaa00").send({from:account, gas: 3000000, value: web3.utils.toWei('0.138', 'ether')})
         transactionData = JSON.parse(JSON.stringify(tokenTransaction))["events"]["Transfer"];
         
         for(let i=0 ;i <transactionData.length;i++){
@@ -124,7 +136,7 @@ const SalesPage = () => {
         <div className={style.grid}>
           <div className={style.img}>
             <img
-              src='https://uploads-ssl.webflow.com/60a2950b08beb715e850d8a5/611a726e05800e74d68787c5_326%20copy.png'
+              src={bear_1}
               alt='img'
             />
           </div>
@@ -134,7 +146,7 @@ const SalesPage = () => {
         <div className={style.grid}>
           <div className={style.img}>
             <img
-              src='https://uploads-ssl.webflow.com/60a2950b08beb715e850d8a5/611a726e05800e74d68787c5_326%20copy.png'
+              src={bear_2}
               alt='img'
             />
           </div>
@@ -144,26 +156,16 @@ const SalesPage = () => {
         <div className={style.grid}>
           <div className={style.img}>
             <img
-              src='https://uploads-ssl.webflow.com/60a2950b08beb715e850d8a5/611a726e05800e74d68787c5_326%20copy.png'
+              src={bear_5}
               alt='img'
             />
           </div>
           <div className={style.mintTitle}>Mint 5</div>
           <button onClick={()=>BuyToken(5)}>Mint Now</button>
         </div>
-        <div className={style.grid}>
-          <div className={style.img}>
-            <img
-              src='https://uploads-ssl.webflow.com/60a2950b08beb715e850d8a5/611a726e05800e74d68787c5_326%20copy.png'
-              alt='img'
-            />
-          </div>
-          <div className={style.mintTitle}>Mint 10</div>
-          <button onClick={()=>BuyToken(10)}>Mint Now</button>
-        </div>
       </div>
     </div>
   );
 };
 
-export default SalesPage;
+export default PreSale;
