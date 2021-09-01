@@ -1,24 +1,63 @@
-.wrap {
-    padding: 5rem 2rem;
+body {
+  font-family: 'Righteous', cursive;
+}
+  .header_logo {
+    background-color: rgba(97,72,251,255);
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
+  .logo_img {
+    max-width: 300px;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .body_wrapper {
+    margin-top: 1rem;
+    padding-bottom: 5px;
+  }
+  .body_wrapper h1 {
+    font-size:40px ; 
+    font-weight: 700;
+    box-shadow: 10px;
+   }
+   .body_wrapper h2 {
+     color: #664af8;
+     font-weight: 700;
+     font-size: 30px;
+   }
+   .body_wrapper .polar_text {
+     font-size: 20px;
+   }
+   .address {
+    color: #664af8;
+    font-weight: 700;
+    font-size: 16px;
+   }
   .gridWrap {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+  }
+
+  .wallet_btn button {
+  background-image: linear-gradient(to right,#6455f8 , #74b0f9);
+  color:white;
+  padding: 0.70rem 1.5rem;
+  border-radius: 30px;
   }
   .grid {
-    width: 48%;
-    margin-bottom: 20px;
+    width: 35%;
     text-align: center;
-    border: 3px solid lightgrey;
-    border-radius: 20px;
-    padding: 20px 10px;
     box-sizing: border-box;
+    padding:  20px 10px;
   }
   .img img {
     width: 100%;
+  }
+  .img img:hover {
+    color: transparent;
   }
   .mintTitle {
     font-size: 20px;
@@ -37,6 +76,7 @@
     cursor: pointer;
     font-weight: bold;
   }
+
   @media screen and (max-width: 600px) {
     .grid {
       width: 100%;
