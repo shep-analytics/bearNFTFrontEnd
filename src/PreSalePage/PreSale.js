@@ -25,6 +25,7 @@ const PreSale = () => {
 
     const [ bearContract , setBearContract] = useState(null);
     const [ account, setAccount] = useState(null);
+    const [preSaleAmount,setPreSaleAmount] = useState(1000);
     
     const loadWeb3 = async ()=>{
       if (window.ethereum) {
@@ -38,7 +39,9 @@ const PreSale = () => {
         
         const contract  = new web3.eth.Contract(bearTokenABI,bearTokenAddress)
         setBearContract(contract)
-        
+        const tx = await contract.methods.getPreSaleNFTAmount().call();
+        console.log("Transaction: ", tx)
+        setPreSaleAmount(tx);
   
       }
       else if (window.web3) {
@@ -51,29 +54,24 @@ const PreSale = () => {
         
         const contract  = new web3.eth.Contract(bearTokenABI,bearTokenAddress)
         setBearContract(contract)
+        const tx = await contract.methods.getPreSaleNFTAmount().call();
+        console.log("Transaction: ", tx)
+  
       
       }
       else {
         window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
       }
+
     }
   
 
 
-    useEffect(()=>{
-        loadWeb3();
-    },[])
+    const updatePreSale  = async ()=>{
+      const tx = await bearContract.methods.getPreSaleNFTAmount().call();
+      setPreSaleAmount(tx);
+    }
 
-
-    function web3StringToBytes32(text) {
-      var result = ethers.utils.hexlify(ethers.utils.toUtf8Bytes(text));
-      while (result.length < 66) { result += '0'; }
-      if (result.length !== 66) { throw new Error("invalid web3 implicit bytes32"); }
-      return result;
-  }
-
-
-    
     const BuyToken = async (numberOfTokens)=>{
       console.log(account)
       const web3 = window.web3;
@@ -128,7 +126,7 @@ const PreSale = () => {
   
      if(tokenId !== null) window.alert('Token ID: '+JSON.stringify(tokenId));
      else window.alert('Token IDS: '+JSON.stringify(tokenIdArray));
-  
+     await updatePreSale()
   }
   
   
@@ -143,7 +141,7 @@ const PreSale = () => {
       </div>
       <div className={style.body_wrapper}>
         <h1 style={{textAlign:"center"}}>MINT YOUR POLAR PALS</h1>
-        <p className={style.polar_text} style={{textAlign:"center"}}>Number of Polar Pals Left: 1000/1000</p>
+        <p className={style.polar_text} style={{textAlign:"center"}}>Number of Polar Pals Left: {preSaleAmount}/1000</p>
         <h2 style={{textAlign:"center"}}>HOW MANY PALS DO YOU WANT?</h2>
       <div className={style.gridWrap}>
         <div className={style.grid}>

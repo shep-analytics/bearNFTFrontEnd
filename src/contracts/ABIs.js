@@ -483,6 +483,32 @@ export const bearTokenABI = [
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "immutableIPFSBucket_",
+        "type": "string"
+      }
+    ],
+    "name": "setImmutableIPFSBucket",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "mutableIPFSBucket_",
+        "type": "string"
+      }
+    ],
+    "name": "setMutableIPFSBucket",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "getCurrentNFTAmount",
     "outputs": [
@@ -538,6 +564,24 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "newItemId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "tokenURI",
+        "type": "string"
+      }
+    ],
+    "name": "setTokenURI",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "string",
         "name": "tokenURI",
         "type": "string"
@@ -558,9 +602,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "bytes32[]",
+        "internalType": "string",
         "name": "tokenURI",
-        "type": "bytes32[]"
+        "type": "string"
       }
     ],
     "name": "claim_2",
@@ -578,9 +622,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "bytes32[]",
+        "internalType": "string",
         "name": "tokenURI",
-        "type": "bytes32[]"
+        "type": "string"
       }
     ],
     "name": "claim_5",
@@ -598,9 +642,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "bytes32[]",
+        "internalType": "string",
         "name": "tokenURI",
-        "type": "bytes32[]"
+        "type": "string"
       }
     ],
     "name": "claim_10",
@@ -618,9 +662,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "bytes32[]",
+        "internalType": "string",
         "name": "tokenURI",
-        "type": "bytes32[]"
+        "type": "string"
       }
     ],
     "name": "claim_20",
@@ -638,9 +682,9 @@ export const bearTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "bytes32[]",
+        "internalType": "string",
         "name": "tokenURI",
-        "type": "bytes32[]"
+        "type": "string"
       }
     ],
     "name": "claim_10_GiveAway",
