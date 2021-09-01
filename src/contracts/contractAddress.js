@@ -1,1 +1,1 @@
-export const bearTokenAddress = "0xe124c4eFB04Cfe7b46B5F19Db2B3C1bC336CF1a5"; // UPDATE THIS
+export const bearTokenAddress = "0xF08aF4BED64a5550AF0119A69222735Dda78C4cC"; // UPDATE THIS

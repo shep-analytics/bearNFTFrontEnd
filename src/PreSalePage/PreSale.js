@@ -69,6 +69,7 @@ const PreSale = () => {
 
     const updatePreSale  = async ()=>{
       const tx = await bearContract.methods.getPreSaleNFTAmount().call();
+      console.log(tx)
       setPreSaleAmount(tx);
     }
 
@@ -145,12 +146,13 @@ const PreSale = () => {
         <h2 style={{textAlign:"center"}}>HOW MANY PALS DO YOU WANT?</h2>
       <div className={style.gridWrap}>
         <div className={style.grid}>
-          <div className={style.img}>
+          <div className={style.img} >
             <a>
             <img
               src={bear_1}
               alt='img'
               onClick={()=>BuyToken(1)}
+              className={style.polar_img}
             />
             </a>
           </div>
@@ -162,6 +164,7 @@ const PreSale = () => {
               src={bear_2}
               alt='img'
               onClick={()=>BuyToken(2)}
+              className={style.polar_img}
             />
             </a>
           </div>
@@ -173,12 +176,12 @@ const PreSale = () => {
               src={bear_5}
               alt='img'
               onClick={()=>BuyToken(5)}
+              className={style.polar_img}
             />
             </a>
           </div>
         </div>
       </div>
-      <p className={style.polar_text} style={{textAlign:"center"}}>You haven't selected any pals yet =(</p>
       <p className={style.address} style={{textAlign:"center"}}>YOUR ADDRESS:{account}</p>
       <div style={{textAlign:"center"}}>
         <div className={style.wallet_btn}>
